@@ -1,0 +1,11 @@
+1 - (ng serve) - rodar o projeto
+
+2 - ng g m produtos --routing - nome do modulo e roteamento
+
+3 - ng g c produtos/produtos - nome dos componentes da tabela
+
+4 - ng g m shared/app-material - Comando do Material
+
+5 - ng g m shared - Camanda de Serviços / Tratamento de Erros
+
+6 -  ng g c shared/components/error-dialog - Tratamento de Erros
