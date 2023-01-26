@@ -91,7 +91,7 @@ Pré-requisitos: Java 19
 git clone https://github.com/ghdss26/wco.git
 
 # entrar na pasta do projeto back end
-cd wco
+cd cdp
 
 # executar o projeto
 ./mvnw spring-boot:run
