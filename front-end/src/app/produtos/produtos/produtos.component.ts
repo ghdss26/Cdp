@@ -1,9 +1,11 @@
-import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
-import { ProdutosService } from './../services/produtos.service';
-import { Produto } from './../model/produto';
-import { Component, OnInit } from '@angular/core';
-import { catchError, Observable, of } from 'rxjs';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
+import { catchError, Observable, of } from 'rxjs';
+
+import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
+import { Produto } from './../model/produto';
+import { ProdutosService } from './../services/produtos.service';
 
 @Component({
   selector: 'app-produtos',
@@ -14,14 +16,16 @@ export class ProdutosComponent{
 
   produtos$: Observable <Produto[]>;
 
-  displayedColumns = ['titulo', 'preco', 'estoque'];
+  displayedColumns = [ 'titulo', 'preco', 'estoque', 'actions'];
 
   //produtosService: ProdutosService;
 
   constructor(
 
     private produtosService: ProdutosService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router,
+    private route: ActivatedRoute
   ) {
 
     //this.produtos = [];
@@ -52,4 +56,10 @@ export class ProdutosComponent{
 
   ngOnInit(): void {
   }
+
+  onAdd() {
+
+    this.router.navigate(['new'], {relativeTo: this.route});
+  }
+
 }

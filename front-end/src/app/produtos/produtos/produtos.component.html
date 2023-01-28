@@ -6,25 +6,54 @@
 
     <div *ngIf="produtos$ | async as produtos; else loading ">
     <table mat-table [dataSource]="produtos" class="mat-elevation-z8">
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
 
-      <!-- Name Column -->
-      <ng-container matColumnDef="titulo">
-        <th mat-header-cell *matHeaderCellDef>Título</th>
-        <td mat-cell *matCellDef="let produto">{{ produto.titulo }}</td>
+      <ng-container matColumnDef="_id">
+        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let produto">{{ produto._id }}</td>
       </ng-container>
 
-      <!-- Weight Column -->
+
+      <ng-container matColumnDef="titulo">
+        <th mat-header-cell *matHeaderCellDef>Título</th>
+        <td mat-cell *matCellDef="let produto">{{ produto.titulo }}
+        </td>
+      </ng-container>
+
+
       <ng-container matColumnDef="preco">
         <th mat-header-cell *matHeaderCellDef>Preço</th>
         <td mat-cell *matCellDef="let produto">{{ produto.preco }}</td>
       </ng-container>
 
-      <!-- Symbol Column -->
+
       <ng-container matColumnDef="estoque">
         <th mat-header-cell *matHeaderCellDef>Estoque</th>
-        <td mat-cell *matCellDef="let produto">{{ produto.estoque }}</td>
+        <td mat-cell *matCellDef="let produto">{{ produto.estoque }}
+          <mat-icon aria-hidden="false" aria-label="Estoque do Produto">{{produto.estoque | estoque}}</mat-icon>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+
+        <mat-header-cell *matHeaderCellDef>
+
+
+          <button (click)="onAdd()" mat-stroked-button color="primary" >Add</button>
+
+        </mat-header-cell>
+
+        <mat-cell *matCellDef="let produto">
+
+          <button mat-mini-button color="primary" aria-label="Adicionar um Produto">
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-mini-button color="warn" aria-label="Remover um Produto">
+            <mat-icon>delete</mat-icon>
+          </button>
+
+        </mat-cell>
+
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

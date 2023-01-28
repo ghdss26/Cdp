@@ -9,3 +9,7 @@
 5 - ng g m shared - Camanda de Serviços / Tratamento de Erros
 
 6 -  ng g c shared/components/error-dialog - Tratamento de Erros
+
+7 - ng g c produtos/produto-form - Criação de Formúlarios
+
+8 - ng g c produtos/produtos-list - Lista de Componentes

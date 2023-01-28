@@ -2,18 +2,24 @@ import { ErrorDialogComponent } from './components/error-dialog/error-dialog.com
 import { NgModule } from '@angular/core';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { CommonModule } from '@angular/common';
+import { EstoquePipe } from './pipes/estoque.pipe';
 
 @NgModule({
 
   declarations: [
 
-    ErrorDialogComponent
+    ErrorDialogComponent,
+     EstoquePipe
   ],
   imports: [
 
     AppMaterialModule,
     CommonModule
   ],
-  exports: [ErrorDialogComponent]
+  exports: [
+
+    ErrorDialogComponent,
+    EstoquePipe
+  ]
 })
 export class SharedModule { }

@@ -10,7 +10,7 @@ import { delay, first, tap } from 'rxjs';
 })
 export class ProdutosService {
 
-  private readonly API = '/assets/produtos.json';
+  private readonly API = 'api/produtos';
 
   constructor(private HttpClient: HttpClient) { }
 
@@ -19,8 +19,13 @@ export class ProdutosService {
     return this.HttpClient.get<Produto[]>(this.API)
     .pipe(
       first(),
-      delay(15000),
+      delay(5000),
       tap(produtos => console.log(produtos))
     );
+  }
+
+  save(record: Partial<Produto>) {
+
+    return this.HttpClient.post<Produto>(this.API, record).pipe(first());
   }
 }

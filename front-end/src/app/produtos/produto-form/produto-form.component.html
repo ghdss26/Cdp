@@ -1,0 +1,43 @@
+<mat-card>
+
+  <mat-toolbar color="primary">
+    Detalhes do Produto
+  </mat-toolbar>
+
+  <mat-card-content>
+
+    <form [formGroup]="form" class="f" class="min-width">
+
+      <mat-form-field class="full-width" >
+
+        <input matInput placeholder="Titulo" formControlName="titulo">
+
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+
+        <input matInput placeholder="Preço" formControlName="preco">
+
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+
+        <input matInput placeholder="Estoque" formControlName="estoque">
+
+      </mat-form-field>
+
+    </form>
+
+  </mat-card-content>
+
+  <mat-card-actions class="c">
+
+    <button mat-raised-button color="primary" (click)="onSubmit()" >Salvar</button>
+
+    <button mat-raised-button (click)="onCancel()">Cancelar</button>
+
+  </mat-card-actions>
+
+</mat-card>
+
+
