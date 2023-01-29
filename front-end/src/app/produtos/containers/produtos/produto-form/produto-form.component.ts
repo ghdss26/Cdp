@@ -3,7 +3,7 @@ import { NonNullableFormBuilder } from '@angular/forms';
 import { Location } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-import { ProdutosService } from './../services/produtos.service';
+import { ProdutosService } from '../../../services/produtos.service';
 
 @Component({
   selector: 'app-produto-form',

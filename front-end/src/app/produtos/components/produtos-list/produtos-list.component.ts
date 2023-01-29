@@ -1,7 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { Produto } from './../model/produto';
+import { Produto } from '../../model/produto';
 
 @Component({
   selector: 'app-produtos-list',
@@ -11,6 +10,7 @@ import { Produto } from './../model/produto';
 export class ProdutosListComponent{
 
   @Input() produtos: Produto[] = [];
+  @Output() add = new EventEmitter(false);
 
   readonly displayedColumns = [ 'titulo', 'preco', 'estoque', 'actions'];
 
@@ -20,7 +20,7 @@ export class ProdutosListComponent{
 
   onAdd() {
 
-
+    this.add.emit(true);
   }
 
 

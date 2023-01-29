@@ -3,9 +3,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
 
-import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
-import { Produto } from './../model/produto';
-import { ProdutosService } from './../services/produtos.service';
+import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
+import { Produto } from '../../model/produto';
+import { ProdutosService } from '../../services/produtos.service';
 
 @Component({
   selector: 'app-produtos',
