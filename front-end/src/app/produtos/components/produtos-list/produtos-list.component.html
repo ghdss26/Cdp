@@ -37,11 +37,11 @@
     <mat-cell *matCellDef="let produto" class="action-column">
 
       <button mat-mini-button color="primary" aria-label="Adicionar um Produto">
-        <mat-icon>edit</mat-icon>
+        <mat-icon (click)="onEdit(produto)">edit</mat-icon>
       </button>
 
       <button mat-mini-button color="warn" aria-label="Remover um Produto">
-        <mat-icon>delete</mat-icon>
+        <mat-icon (click)="onDelete(produto)">delete</mat-icon>
       </button>
 
     </mat-cell>

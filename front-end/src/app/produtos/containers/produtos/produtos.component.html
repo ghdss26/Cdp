@@ -8,7 +8,9 @@
 
       <app-produtos-list *ngIf="produtos$ | async as produtos; else loading "
       [produtos]="produtos"
-      (add)="onAdd()">
+      (add)="onAdd()"
+      (edit)="onEdit($event)"
+      (remove)="onRemove($event)">
 
       </app-produtos-list>
 

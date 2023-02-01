@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,7 +15,7 @@ import { ProdutosService } from '../../services/produtos.service';
 })
 export class ProdutosComponent{
 
-  produtos$: Observable <Produto[]>;
+  produtos$: Observable <Produto[]> | null = null;
 
   displayedColumns = [ 'titulo', 'preco', 'estoque', 'actions'];
 
@@ -25,25 +26,27 @@ export class ProdutosComponent{
     private produtosService: ProdutosService,
     public dialog: MatDialog,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar
   ) {
 
     //this.produtos = [];
 
     //this.produtosService = new ProdutosService();
 
-    this.produtos$ = this.produtosService.list()
-    .pipe(
+    this.refresh();
+  }
 
-      catchError(
+  refresh() {
 
-        error => {
+    this.produtos$ = this.produtosService.list().pipe(
 
-          this.onError('Erro ao carregar produtos.');
-          return of([])
-        }
-      )
-    );
+      catchError( error => {
+
+        this.onError('Erro ao carregar produtos.');
+        return of([]);
+      })
+    )
   }
 
   onError(errorMsg: String) {
@@ -62,4 +65,40 @@ export class ProdutosComponent{
     this.router.navigate(['new'], {relativeTo: this.route});
   }
 
+  onEdit(produto: Produto) {
+
+    this.router.navigate(['edit', produto._id], {relativeTo: this.route});
+  }
+
+  async onRemove(produto: Produto) {
+
+   /* (await this.produtosService.remove(produto._id)).subscribe(
+      () => {
+        console.log(produto);
+        this.refresh();
+        this.snackBar.open('Curso removido com sucesso!', 'X', {
+          duration: 5000,
+          verticalPosition: 'top',
+          horizontalPosition: 'center'
+        });
+      },
+    ); */
+
+    await this.produtosService.remove(produto._id).then(() => {
+
+      console.log(produto);
+      this.refresh();
+      this.snackBar.open('Curso removido com sucesso!', 'X', {
+        duration: 5000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center'
+      });
+    }).catch(() => {
+
+      this.onError('Erro ao tentar remover curso.')
+    })
+  }
 }
+
+
+
