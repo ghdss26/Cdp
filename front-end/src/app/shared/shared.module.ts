@@ -3,13 +3,16 @@ import { NgModule } from '@angular/core';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { CommonModule } from '@angular/common';
 import { EstoquePipe } from './pipes/estoque.pipe';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
 
   declarations: [
 
     ErrorDialogComponent,
-     EstoquePipe
+     EstoquePipe,
+     ConfirmationDialogComponent
+
   ],
   imports: [
 
@@ -19,7 +22,9 @@ import { EstoquePipe } from './pipes/estoque.pipe';
   exports: [
 
     ErrorDialogComponent,
+    ConfirmationDialogComponent,
     EstoquePipe
+
   ]
 })
 export class SharedModule { }

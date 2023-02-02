@@ -7,6 +7,7 @@ import { catchError, Observable, of } from 'rxjs';
 import { ErrorDialogComponent } from '../../../shared/components/error-dialog/error-dialog.component';
 import { Produto } from '../../model/produto';
 import { ProdutosService } from '../../services/produtos.service';
+import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-produtos',
@@ -72,6 +73,30 @@ export class ProdutosComponent{
 
   async onRemove(produto: Produto) {
 
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      data: 'Tem certeza que deseja remover esse produto ?',
+    });
+
+    dialogRef.afterClosed().subscribe(async (result:boolean) => {
+
+      if (result) {
+
+        await this.produtosService.remove(produto._id).then(() => {
+
+          console.log(produto);
+          this.refresh();
+          this.snackBar.open('Curso removido com sucesso!', 'X', {
+            duration: 5000,
+            verticalPosition: 'top',
+            horizontalPosition: 'center'
+          });
+        }).catch(() => {
+
+          this.onError('Erro ao tentar remover curso.')
+        })
+      }
+    });
+
    /* (await this.produtosService.remove(produto._id)).subscribe(
       () => {
         console.log(produto);
@@ -83,20 +108,6 @@ export class ProdutosComponent{
         });
       },
     ); */
-
-    await this.produtosService.remove(produto._id).then(() => {
-
-      console.log(produto);
-      this.refresh();
-      this.snackBar.open('Curso removido com sucesso!', 'X', {
-        duration: 5000,
-        verticalPosition: 'top',
-        horizontalPosition: 'center'
-      });
-    }).catch(() => {
-
-      this.onError('Erro ao tentar remover curso.')
-    })
   }
 }
 
