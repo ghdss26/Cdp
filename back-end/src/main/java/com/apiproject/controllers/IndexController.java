@@ -15,8 +15,7 @@ import java.util.UUID;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("/index")
-@CrossOrigin(origins = "*", maxAge = 3600)
+@RequestMapping("api/produtos")
 public class IndexController {
 
     final ProdutoServices produtosServices;
