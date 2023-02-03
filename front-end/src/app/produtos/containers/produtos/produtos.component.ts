@@ -68,7 +68,8 @@ export class ProdutosComponent{
 
   onEdit(produto: Produto) {
 
-    this.router.navigate(['edit', produto._id], {relativeTo: this.route});
+    console.log(produto.id);
+    this.router.navigate(['edit', produto.id], {relativeTo: this.route});
   }
 
   async onRemove(produto: Produto) {
@@ -81,7 +82,7 @@ export class ProdutosComponent{
 
       if (result) {
 
-        await this.produtosService.remove(produto._id).then(() => {
+        await this.produtosService.remove(produto.id).then(() => {
 
           console.log(produto);
           this.refresh();

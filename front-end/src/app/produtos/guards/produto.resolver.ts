@@ -21,6 +21,6 @@ export class ProdutoResolver implements Resolve<Produto> {
       return this.service.loadById(route.params['id']);
     }
 
-    return of({ _id: '', titulo: '' , preco: 0, estoque: 0});
+    return of({ id: '', titulo: '' , preco: 0, estoque: 0});
   }
 }

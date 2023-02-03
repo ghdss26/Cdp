@@ -15,7 +15,7 @@ import { ProdutosService } from '../../../services/produtos.service';
 export class ProdutoFormComponent implements OnInit{
 
   form = this.NonNullableFormBuilder.group({
-    _id: [''],
+    id: [''],
     titulo:[''],
     preco: 0,
     estoque: 0
@@ -33,7 +33,7 @@ export class ProdutoFormComponent implements OnInit{
     const produto: Produto = this.route.snapshot.data['produto'];
 
     this.form.setValue({
-      _id: produto._id,
+      id: produto.id,
       titulo: produto.titulo,
       preco: +produto.preco,
       estoque: +produto.estoque,

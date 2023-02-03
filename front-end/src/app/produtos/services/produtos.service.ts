@@ -35,7 +35,7 @@ export class ProdutosService {
 
     console.log(record);
 
-    if(record._id) {
+    if(record.id) {
 
       console.log('update');
       return this.update(record);
@@ -52,7 +52,7 @@ export class ProdutosService {
 
   private update(record: Partial<Produto>) {
 
-    return this.HttpClient.put<Produto>(`${this.API}/${record._id}`, record).pipe(first());
+    return this.HttpClient.put<Produto>(`${this.API}/${record.id}`, record).pipe(first());
   }
 
   async remove(id: string) {
