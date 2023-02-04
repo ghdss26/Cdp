@@ -14,7 +14,7 @@ export class ProdutosListComponent{
   @Output() edit = new EventEmitter(false);
   @Output() remove = new EventEmitter(true);
 
-  readonly displayedColumns = [ 'titulo', 'preco', 'estoque', 'actions'];
+  readonly displayedColumns = [ 'titulo', 'preco', 'estoque', 'status', 'actions'];
 
   constructor() {
 

@@ -2,7 +2,7 @@ import { ErrorDialogComponent } from './components/error-dialog/error-dialog.com
 import { NgModule } from '@angular/core';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { CommonModule } from '@angular/common';
-import { EstoquePipe } from './pipes/estoque.pipe';
+import { StatusPipe } from './pipes/status.pipe';
 import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
@@ -10,8 +10,8 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
   declarations: [
 
     ErrorDialogComponent,
-     EstoquePipe,
-     ConfirmationDialogComponent
+    StatusPipe,
+    ConfirmationDialogComponent
 
   ],
   imports: [
@@ -23,7 +23,7 @@ import { ConfirmationDialogComponent } from './components/confirmation-dialog/co
 
     ErrorDialogComponent,
     ConfirmationDialogComponent,
-    EstoquePipe
+    StatusPipe
 
   ]
 })

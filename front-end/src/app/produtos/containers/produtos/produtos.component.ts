@@ -18,7 +18,7 @@ export class ProdutosComponent{
 
   produtos$: Observable <Produto[]> | null = null;
 
-  displayedColumns = [ 'titulo', 'preco', 'estoque', 'actions'];
+  displayedColumns = [ 'titulo', 'preco', 'estoque', 'status', 'actions'];
 
   //produtosService: ProdutosService;
 

@@ -20,7 +20,8 @@ export class ProdutoFormComponent implements OnInit{
     Validators.minLength(5),
     Validators.maxLength(100)]],
     preco: 0,
-    estoque: 0
+    estoque: 0,
+    status:['', [Validators.required]]
   });
 
   constructor(private NonNullableFormBuilder: NonNullableFormBuilder,
@@ -39,6 +40,7 @@ export class ProdutoFormComponent implements OnInit{
       titulo: produto.titulo,
       preco: +produto.preco,
       estoque: +produto.estoque,
+      status: produto.status
     });
   }
 

@@ -9,7 +9,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
 
@@ -24,7 +24,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule
   ],
 
 })

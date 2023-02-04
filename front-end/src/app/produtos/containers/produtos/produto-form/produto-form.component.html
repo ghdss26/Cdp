@@ -28,6 +28,24 @@
 
       </mat-form-field>
 
+      <mat-form-field class="full-width">
+
+        <mat-label>Status</mat-label>
+
+        <mat-select formControlName="status">
+
+          <mat-option value=""></mat-option>
+          <mat-option value="Ativo">Ativo</mat-option>
+          <mat-option value="Inativo">Inativo</mat-option>
+
+        </mat-select>
+
+        <mat-error *ngIf="form.get('status')?.invalid">{{
+          getErrorMessage('status')
+        }}</mat-error>
+
+      </mat-form-field>
+
     </form>
 
   </mat-card-content>

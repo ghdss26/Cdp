@@ -18,11 +18,17 @@
     <mat-cell *matCellDef="let produto">{{ produto.preco }}</mat-cell>
   </ng-container>
 
-
   <ng-container matColumnDef="estoque">
     <mat-header-cell *matHeaderCellDef>Estoque</mat-header-cell>
     <mat-cell *matCellDef="let produto">{{ produto.estoque }}
-      <mat-icon aria-hidden="false" aria-label="Estoque do Produto">{{produto.estoque | estoque}}</mat-icon>
+      <mat-icon aria-hidden="false" aria-label="Estoque do Produto">{{produto.estoque}}</mat-icon>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+    <mat-cell *matCellDef="let produto">{{ produto.status | status}}
+      <mat-icon aria-hidden="false" aria-label="Status do Produto">{{produto.status}}</mat-icon>
     </mat-cell>
   </ng-container>
 
