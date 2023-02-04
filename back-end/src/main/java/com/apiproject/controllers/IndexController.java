@@ -4,14 +4,17 @@ import com.apiproject.dtos.ProdutoDto;
 import com.apiproject.models.ProdutoModel;
 import com.apiproject.services.ProdutoServices;
 import jakarta.validation.Valid;
+
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 import java.util.UUID;
+
 
 @AllArgsConstructor
 @RestController
@@ -34,7 +37,7 @@ public class IndexController {
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<Object> getProduto(@PathVariable(value = "id") UUID id) {
+    public ResponseEntity<Object> getProduto(@PathVariable(value = "id")  UUID id) {
         Optional<ProdutoModel> produtoModelOptional = produtosServices.findById(id);
         if (produtoModelOptional.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Produto não encontrado");
@@ -43,7 +46,7 @@ public class IndexController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteProduto(@PathVariable(value = "id") UUID id) {
+    public ResponseEntity<Object> deleteProduto(@PathVariable(value = "id")  UUID id) {
         Optional<ProdutoModel> produtoModelOptional = produtosServices.findById(id);
         if (produtoModelOptional.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Produto não encontrado");
@@ -55,7 +58,7 @@ public class IndexController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateProduto(@PathVariable(value = "id") UUID id,
-                                                @RequestBody @Valid ProdutoDto produtoDto) {
+                                                @RequestBody  ProdutoDto produtoDto) {
         Optional<ProdutoModel> produtoModelOptional = produtosServices.findById(id);
         if (produtoModelOptional.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Produto não encontrado");

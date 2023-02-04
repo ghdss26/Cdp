@@ -20,4 +20,7 @@ public class ProdutoDto {
     @NotNull
     private Integer estoque;
 
+    @NotBlank
+    private String status;
+
 }
