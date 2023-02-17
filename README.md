@@ -81,18 +81,34 @@ Entidade Produto - localhost:8050/produto
   $ Possuir um programa Postman ou Insmonia para copiar e colar as rotas das entidades e ver o crud completo
  
 ```
-## Como executar o projeto
+## Como executar o projeto no Spring Boot no terminal ou vscode
 
 ## Back end
-Pré-requisitos: Java 19
+Pré-requisitos: Java 11
 
 ```bash
 # clonar repositório
-git clone https://github.com/ghdss26/wco.git
+git clone https://github.com/ghdss26/cdp.git
 
-# entrar na pasta do projeto back end
-cd cdp
+# entrar na pasta do projeto cdp
+cd cdp 
+cd back-end 
 
 # executar o projeto
 ./mvnw spring-boot:run
+```
+## Como executar o projeto no Angular no terminal ou vscode
+
+```bash
+# clonar repositório
+git clone https://github.com/ghdss26/cdp.git
+
+# entrar na pasta do projeto cdp
+cd cdp 
+cd front-end 
+
+# executar o projeto
+npm start run 
+
+digitar no navegador: http://localhost/4200
 ```
