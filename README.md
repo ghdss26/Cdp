@@ -70,7 +70,7 @@ Entidade Produto - localhost:8050/produto
 
   ```bash 
   
-  $ Vai mostrar as todas as informações da API do Sistema, pelo banco de dados no programa Insomnia
+  $ Vai mostrar todas as informações da API do Sistema, pelo banco de dados no programa Insomnia
  
 ```
 ## Baixar e visualizar o Projeto 
