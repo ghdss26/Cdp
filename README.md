@@ -50,6 +50,16 @@ o agrupamento de conjunto de atributos em varias classes simples de forma a otim
 
 -[npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
+## Depedências do Angular 
+
+-[Axios](https://axios-http.com/ptbr/docs/intro) 
+
+-[npm Bootstrap](https://www.npmjs.com/package/bootstrap)
+
+## Material do Angular 
+
+-[Angular Material](https://material.angular.io/)
+
 ## Rotas do Spring Boot - Cdp - Cadastro de Produtos
 
 Precisa adicionar essas rotas no Postman, Insomnia ou Navegadores para ver os dados do back - end, vindas pelo banco de dados.
@@ -62,7 +72,6 @@ Entidade Produto - localhost:8050/produto
   
   $ Vai mostrar as todas as informações da API do Sistema, pelo banco de dados no programa Insomnia
 ```
-
 
 ## Baixar e visualizar o Projeto 
 
