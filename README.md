@@ -50,7 +50,7 @@ o agrupamento de conjunto de atributos em varias classes simples de forma a otim
 
 -[npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
-## Rotas do Spring Boot - Sistema Wco - Web Consulta Odontológica 
+## Rotas do Spring Boot - Cdp - Cadastro de Produtos
 
 Precisa adicionar essas rotas no Postman, Insomnia ou Navegadores para ver os dados do back - end, vindas pelo banco de dados.
 
